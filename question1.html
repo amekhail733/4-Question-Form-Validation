@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+</head>
+<body>
+    <!-- Program 1 -->
+    <form>
+        <p id="par">Enter a phone Number:</p>
+        <input type="tel" id="numInp" required>
+        <button value="submit" onclick="checkNumber(event)">Submit</button>
+    </form>
+</body>
+<script>
+    function checkNumber(e){
+        e.preventDefault();
+        var inp = document.getElementById("numInp").value
+        // var numIsVal = new RegExp("/\d{3}-\d{3}-\d{4}/");
+        var numIsVal = /^\d{3}-\d{3}-\d{4}$/
+        // console.log(inp.match(numIsVal))
+        document.getElementById("par").innerText = numIsVal.test(inp) ? "Valid Phone number" : "Invalid Phone number"
+    }
+</script>
+</html>
